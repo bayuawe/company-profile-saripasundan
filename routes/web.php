@@ -23,6 +23,7 @@ Route::get('/', [FrontController::class, 'index'])->name('front.index');
 Route::get('/details/{product:slug}', [FrontController::class, 'details'])->name('front.details');
 Route::get('/category/{category}', [FrontController::class, 'category'])->name('front.category');
 Route::get('/search', [FrontController::class, 'search'])->name('front.search');
+Route::get('/about', [FrontController::class, 'about'])->name('front.about');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -32,7 +33,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/checkout/{product:slug}', [CheckoutController::class, 'checkout'])->name('front.checkout');
     Route::post('/checkout/store/{product:slug}', [CheckoutController::class, 'store'])->name('front.checkout.store');
 
-    Route::prefix('admin')->name('admin.')->group(function(){
+    Route::prefix('admin')->name('admin.')->group(function () {
         Route::resource('products', ProductController::class);
         Route::resource('product_orders', ProductOrderController::class);
 
@@ -42,8 +43,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/download/file/{productOrder}', [ProductOrderController::class, 'download_file'])->name('product_orders.download')->middleware('throttle:1,1');
 
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-
     });
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

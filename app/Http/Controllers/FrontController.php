@@ -56,4 +56,24 @@ class FrontController extends Controller
             'products' => $products
         ]);
     }
+
+    public function about()
+    {
+        $products = Product::all();
+        $categories = Category::all();
+        return view('front.about', [
+            'products' => $products,
+            'categories' => $categories
+        ]);
+    }
+
+    public function breadcrumbs()
+    {
+        $products = Product::all();
+        $categories = Category::all();
+        return view('front.category', [
+            'products' => $products,
+            'categories' => $categories
+        ]);
+    }
 }

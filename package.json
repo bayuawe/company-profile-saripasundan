@@ -18,6 +18,7 @@
     },
     "dependencies": {
         "@preline/collapse": "^2.1.0",
+        "@preline/dropdown": "^2.1.0",
         "preline": "^2.1.0"
     }
 }
