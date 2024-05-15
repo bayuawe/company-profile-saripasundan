@@ -19,7 +19,7 @@
                 <div>
                     <div class="mt-7 grid gap-3 w-full sm:inline-flex py-4">
                         <a class="py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
-                            href="#">
+                            href="{{ route('front.category', $product->category->id) }}">
                             {{ $product->category->name }}
                         </a>
                     </div>

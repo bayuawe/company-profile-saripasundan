@@ -4,7 +4,7 @@
             $breadcrumbs = [
                 ['title' => 'Home', 'url' => route('front.index')],
                 ['title' => 'Tentang Kami', 'url' => route('front.about')],
-                ['title' => 'Kategori', 'url' => route('front.category', optional($category)->id)],
+                // ['title' => 'Kategori', 'url' => route('front.category', $product->category->id)],
             ];
             $lastIndex = count($breadcrumbs) - 1;
         @endphp

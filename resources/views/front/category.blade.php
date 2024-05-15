@@ -16,7 +16,7 @@
             <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-24">
                 <div class="text-center">
 
-                    <h1 class="text-4xl sm:text-6xl font-bold text-yellow-600">
+                    <h1 class="text-4xl sm:text-6xl font-bold text-yellow-400">
                         {{ $category->name }}
                     </h1>
 
@@ -106,8 +106,8 @@
                     </div>
                 </a>
             @empty
-                <p>
-                    Belum ada produk tersedia.
+                <p class="flex flex-col items-center justify-center text-center text-yellow-400 text-xl">
+                    Produk tidak tersedia
                 </p>
             @endforelse
 

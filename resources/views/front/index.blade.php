@@ -12,7 +12,7 @@
         <div class="relative overflow-hidden">
             <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-24">
                 <div class="text-center">
-                    <h1 class="text-4xl sm:text-6xl font-bold text-yellow-600">
+                    <h1 class="text-4xl sm:text-6xl font-bold text-yellow-400">
                         Selamat datang di <br>Sari Pasundan Pekanbaru
                     </h1>
 

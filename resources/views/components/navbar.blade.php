@@ -99,10 +99,130 @@
                             </div>
                         </div>
 
-                        <a class="font-medium text-gray-800 hover:text-gray-600 py-3 md:py-6"
-                            href="{{ route('front.about') }}">
-                            Tentang Kami
-                        </a>
+                        <div
+                            class="hs-dropdown [--strategy:static] md:[--strategy:absolute] [--adaptive:none] md:[--trigger:hover] py-3 md:py-4">
+                            <button type="button"
+                                class="flex items-center w-full text-gray-800 hover:text-gray-900 font-medium ">
+                                Perusahaan
+                                <svg class="flex-shrink-0 ms-2 size-4" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="m6 9 6 6 6-6" />
+                                </svg>
+                            </button>
+
+                            <div
+                                class="hs-dropdown-menu transition-[opacity,margin] duration-[0.1ms] md:duration-[150ms] hs-dropdown-open:opacity-100 opacity-0 w-full hidden z-10 top-full start-0 min-w-60 bg-white md:shadow-2xl rounded-lg py-2 md:p-4 before:absolute before:-top-5 before:start-0 before:w-full before:h-5">
+                                <div class="md:grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                                    <div class="flex flex-col mx-1 md:mx-0">
+                                        <a class="group flex gap-x-5 hover:bg-gray-100 rounded-lg p-4 text-gray-800 hover:text-gray-900"
+                                            href="#">
+                                            <svg class="flex-shrink-0 size-5 mt-1" xmlns="http://www.w3.org/2000/svg"
+                                                width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round">
+                                                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                                                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+                                            </svg>
+                                            <div class="grow">
+                                                <p class="font-medium text-gray-800">
+                                                    Halal MUI
+                                                </p>
+                                                <p class="text-sm text-gray-500 hover:text-gray-800">
+                                                    Sertifikasi produk halal</p>
+                                            </div>
+                                        </a>
+
+                                        <a class="group flex gap-x-5 hover:bg-gray-100 rounded-lg p-4 text-gray-800 hover:text-gray-900"
+                                            href="#">
+                                            <svg class="flex-shrink-0 size-5 mt-1" xmlns="http://www.w3.org/2000/svg"
+                                                width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round">
+                                                <rect width="7" height="7" x="14" y="3" rx="1" />
+                                                <path
+                                                    d="M10 21V8a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1H3" />
+                                            </svg>
+                                            <div class="grow">
+                                                <p class="font-medium text-gray-800">Tentang Kami
+                                                </p>
+                                                <p class="text-sm text-gray-500 hover:text-gray-800">
+                                                    Tentang Sari Pasundan</p>
+                                            </div>
+                                        </a>
+                                    </div>
+
+                                    <div class="flex flex-col mx-1 md:mx-0">
+                                        <a class="group flex gap-x-5 hover:bg-gray-100 rounded-lg p-4 text-gray-800 hover:text-gray-900"
+                                            href="#">
+                                            <svg class="flex-shrink-0 size-5 mt-1" xmlns="http://www.w3.org/2000/svg"
+                                                width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round">
+                                                <circle cx="12" cy="12" r="10" />
+                                                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                                                <path d="M12 17h.01" />
+                                            </svg>
+                                            <div class="grow">
+                                                <p class="font-medium text-gray-800">Karir
+                                                </p>
+                                                <p class="text-sm text-gray-500 hover:text-gray-800">
+                                                    Temukan karir yang tersedia di Sari Pasundan</p>
+                                            </div>
+                                        </a>
+
+                                        <a class="group flex gap-x-5 hover:bg-gray-100 rounded-lg p-4 text-gray-800 hover:text-gray-900"
+                                            href="#">
+                                            <svg class="flex-shrink-0 size-5 mt-1" xmlns="http://www.w3.org/2000/svg"
+                                                width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round">
+                                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                                                <circle cx="9" cy="7" r="4" />
+                                                <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                                                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                                            </svg>
+                                            <div class="grow">
+                                                <p class="font-medium text-gray-800">Kontak Kami
+                                                </p>
+                                                <p class="text-sm text-gray-500 hover:text-gray-800">
+                                                    Learn, share, and connect with other Preline users.</p>
+                                            </div>
+                                        </a>
+                                    </div>
+
+                                    <div class="flex flex-col pt-4 md:pt-0 mx-1 md:mx-0">
+                                        <span class="text-sm font-semibold uppercase text-gray-800">Galeri</span>
+
+                                        <!-- Link -->
+                                        <a class="group mt-2 p-3 flex gap-x-5 items-center rounded-xl hover:bg-gray-100"
+                                            href="#">
+                                            <img class="size-32 rounded-lg"
+                                                src="https://images.unsplash.com/photo-1648737967328-690548aec14f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90oy1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=320&q=80"
+                                                alt="Image Description">
+                                            <div class="grow">
+                                                <p class="text-sm text-gray-800">
+                                                    Kumpulan foto produk dari Sari Pasundan
+                                                </p>
+                                                <p
+                                                    class="mt-3 inline-flex items-center gap-x-1 text-sm text-blue-600 decoration-2 hover:underline font-medium">
+                                                    Eksplore
+                                                    <svg class="flex-shrink-0 size-4 transition ease-in-out group-hover:translate-x-1"
+                                                        xmlns="http://www.w3.org/2000/svg" width="24"
+                                                        height="24" viewBox="0 0 24 24" fill="none"
+                                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                        stroke-linejoin="round">
+                                                        <path d="m9 18 6-6-6-6" />
+                                                    </svg>
+                                                </p>
+                                            </div>
+                                        </a>
+                                        <!-- End Link -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
                         <a class="font-medium text-gray-800 hover:text-gray-600 py-3 md:py-6" href="#">
                             Lokasi Outlet
