@@ -35,7 +35,8 @@
                     class="overflow-hidden overflow-y-auto max-h-[75vh] [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300">
                     <div
                         class="flex flex-col gap-x-0 mt-5 divide-y divide-dashed divide-gray-200 md:flex-row md:items-center md:justify-end md:gap-x-7 md:mt-0 md:ps-7 md:divide-y-0 md:divide-solid">
-                        <a class="font-medium text-gray-800 py-3 md:py-6" href="#" aria-current="page">Home</a>
+                        <a class="font-medium text-gray-800 py-3 md:py-6" href="{{ route('front.index') }}"
+                            aria-current="page">Home</a>
 
                         <div
                             class="hs-dropdown [--strategy:static] md:[--strategy:absolute] [--adaptive:none] md:[--trigger:hover] py-3 md:py-6">
@@ -117,7 +118,7 @@
                                 <div class="md:grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                                     <div class="flex flex-col mx-1 md:mx-0">
                                         <a class="group flex gap-x-5 hover:bg-gray-100 rounded-lg p-4 text-gray-800 hover:text-gray-900"
-                                            href="#">
+                                            href="{{ route('front.certificate') }}">
                                             <svg class="flex-shrink-0 size-5 mt-1" xmlns="http://www.w3.org/2000/svg"
                                                 width="24" height="24" viewBox="0 0 24 24" fill="none"
                                                 stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -127,15 +128,15 @@
                                             </svg>
                                             <div class="grow">
                                                 <p class="font-medium text-gray-800">
-                                                    Halal MUI
+                                                    Sertifikasi dan Izin
                                                 </p>
                                                 <p class="text-sm text-gray-500 hover:text-gray-800">
-                                                    Sertifikasi produk halal</p>
+                                                    Sertifikasi produk halal dan izin lainnya</p>
                                             </div>
                                         </a>
 
                                         <a class="group flex gap-x-5 hover:bg-gray-100 rounded-lg p-4 text-gray-800 hover:text-gray-900"
-                                            href="#">
+                                            href="{{ route('front.about') }}">
                                             <svg class="flex-shrink-0 size-5 mt-1" xmlns="http://www.w3.org/2000/svg"
                                                 width="24" height="24" viewBox="0 0 24 24" fill="none"
                                                 stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -155,25 +156,7 @@
 
                                     <div class="flex flex-col mx-1 md:mx-0">
                                         <a class="group flex gap-x-5 hover:bg-gray-100 rounded-lg p-4 text-gray-800 hover:text-gray-900"
-                                            href="#">
-                                            <svg class="flex-shrink-0 size-5 mt-1" xmlns="http://www.w3.org/2000/svg"
-                                                width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                                stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                                stroke-linejoin="round">
-                                                <circle cx="12" cy="12" r="10" />
-                                                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-                                                <path d="M12 17h.01" />
-                                            </svg>
-                                            <div class="grow">
-                                                <p class="font-medium text-gray-800">Karir
-                                                </p>
-                                                <p class="text-sm text-gray-500 hover:text-gray-800">
-                                                    Temukan karir yang tersedia di Sari Pasundan</p>
-                                            </div>
-                                        </a>
-
-                                        <a class="group flex gap-x-5 hover:bg-gray-100 rounded-lg p-4 text-gray-800 hover:text-gray-900"
-                                            href="#">
+                                            href="{{ route('front.contact') }}">
                                             <svg class="flex-shrink-0 size-5 mt-1" xmlns="http://www.w3.org/2000/svg"
                                                 width="24" height="24" viewBox="0 0 24 24" fill="none"
                                                 stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -193,21 +176,21 @@
                                     </div>
 
                                     <div class="flex flex-col pt-4 md:pt-0 mx-1 md:mx-0">
-                                        <span class="text-sm font-semibold uppercase text-gray-800">Galeri</span>
+                                        <span class="text-sm font-semibold uppercase text-gray-800">Karir</span>
 
                                         <!-- Link -->
                                         <a class="group mt-2 p-3 flex gap-x-5 items-center rounded-xl hover:bg-gray-100"
-                                            href="#">
+                                            href="{{ route('front.career') }}">
                                             <img class="size-32 rounded-lg"
                                                 src="https://images.unsplash.com/photo-1648737967328-690548aec14f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90oy1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=320&q=80"
                                                 alt="Image Description">
                                             <div class="grow">
                                                 <p class="text-sm text-gray-800">
-                                                    Kumpulan foto produk dari Sari Pasundan
+                                                    Kesempatan kerja yang tersedia di Sari Pasundan
                                                 </p>
                                                 <p
                                                     class="mt-3 inline-flex items-center gap-x-1 text-sm text-blue-600 decoration-2 hover:underline font-medium">
-                                                    Eksplore
+                                                    Lihat
                                                     <svg class="flex-shrink-0 size-4 transition ease-in-out group-hover:translate-x-1"
                                                         xmlns="http://www.w3.org/2000/svg" width="24"
                                                         height="24" viewBox="0 0 24 24" fill="none"
@@ -224,7 +207,8 @@
                             </div>
                         </div>
 
-                        <a class="font-medium text-gray-800 hover:text-gray-600 py-3 md:py-6" href="#">
+                        <a class="font-medium text-gray-800 hover:text-gray-600 py-3 md:py-6"
+                            href="{{ route('front.contact') }}">
                             Lokasi Outlet
                         </a>
 
@@ -235,10 +219,7 @@
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none"
                                         viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                         <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
-                                        <circle cx="8.5" cy="7" r="4" />
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M20 8v6m0 0v6m0-6h-6m6 0h6" />
+                                            d="M12 12c2.28 0 4-1.72 4-4s-1.72-4-4-4-4 1.72-4 4 1.72 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
                                     </svg>
                                     Login
                                 </a>

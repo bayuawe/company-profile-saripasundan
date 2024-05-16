@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Career;
 use App\Models\Category;
+use App\Models\Media;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -64,6 +66,40 @@ class FrontController extends Controller
         return view('front.about', [
             'products' => $products,
             'categories' => $categories
+        ]);
+    }
+
+    public function career()
+    {
+        $careers = Career::all();
+        return view('front.career', [
+            'careers' => $careers
+        ]);
+    }
+
+    public function career_details(Career $career)
+    {
+        $other_careers = Career::where('id', '!=', $career->id)->get();
+        return view('front.career_details', [
+            'career' => $career,
+            'other_careers' => $other_careers
+        ]);
+    }
+
+    public function certificate()
+    {
+        return view('front.certificate');
+    }
+
+    public function contact()
+    {
+        return view('front.contact');
+    }
+    public function media()
+    {
+        $media = Media::all();
+        return view('front.media', [
+            'media' => $media
         ]);
     }
 

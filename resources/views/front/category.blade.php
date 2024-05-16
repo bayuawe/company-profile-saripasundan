@@ -10,9 +10,6 @@
         <div class="w-full h-full absolute top-0 bg-gradient-to-b from-white/70 to-white z-0"></div>
         <!-- Hero -->
         <div class="relative overflow-hidden">
-
-            <x-breadcrumbs />
-
             <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-24">
                 <div class="text-center">
 

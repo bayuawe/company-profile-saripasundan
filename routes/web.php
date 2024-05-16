@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\CareerController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FrontController;
+use App\Http\Controllers\MediaController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductOrderController;
 use App\Http\Controllers\ProfileController;
@@ -24,23 +26,21 @@ Route::get('/details/{product:slug}', [FrontController::class, 'details'])->name
 Route::get('/category/{category}', [FrontController::class, 'category'])->name('front.category');
 Route::get('/search', [FrontController::class, 'search'])->name('front.search');
 Route::get('/about', [FrontController::class, 'about'])->name('front.about');
+Route::get('/career', [FrontController::class, 'career'])->name('front.career');
+Route::get('/career/{career:slug}', [FrontController::class, 'career_details'])->name('front.career_details');
+Route::get('/certificate', [FrontController::class, 'certificate'])->name('front.certificate');
+Route::get('/contact', [FrontController::class, 'contact'])->name('front.contact');
+Route::get('/media', [FrontController::class, 'media'])->name('front.media');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    Route::get('/checkout/{product:slug}', [CheckoutController::class, 'checkout'])->name('front.checkout');
-    Route::post('/checkout/store/{product:slug}', [CheckoutController::class, 'store'])->name('front.checkout.store');
-
     Route::prefix('admin')->name('admin.')->group(function () {
         Route::resource('products', ProductController::class);
-        Route::resource('product_orders', ProductOrderController::class);
 
-        Route::get('/transactions', [ProductOrderController::class, 'transactions'])->name('product_orders.transactions');
-        Route::get('/transactions/details/{productOrder}', [ProductOrderController::class, 'transactions_details'])->name('product_orders.transactions.details');
-
-        Route::get('/download/file/{productOrder}', [ProductOrderController::class, 'download_file'])->name('product_orders.download')->middleware('throttle:1,1');
+        Route::resource('careers', CareerController::class);
 
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     });

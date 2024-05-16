@@ -152,8 +152,6 @@
 
     <x-faq />
 
-    <x-reseller />
-
     <x-footer />
 
 

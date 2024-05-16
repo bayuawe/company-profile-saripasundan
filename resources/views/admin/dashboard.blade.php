@@ -9,14 +9,14 @@
         <div class="max-w-3xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden p-10 shadow-sm sm:rounded-lg flex flex-col gap-y-5">
 
-                @if($errors->any())
+                @if ($errors->any())
                     <div class="alert alert-danger">
                         <ul>
-                            @foreach($errors->all() as $error)
+                            @foreach ($errors->all() as $error)
                                 <li class="py-5 bg-red-500 text-white font-bold">
-                                    {{$error}}
+                                    {{ $error }}
                                 </li>
-                            @endforeach    
+                            @endforeach
                         </ul>
                     </div>
                 @endif
@@ -28,17 +28,7 @@
                 <div class="flex flex-row justify-between">
                     <div>
                         <p class="text-slate-500 text-sm">Total Product:</p>
-                        <p class="text-indigo-950 font-bold text-xl">{{count($my_products)}}</p>
-                    </div>
-    
-                    <div>
-                        <p class="text-slate-500 text-sm">Total Order:</p>
-                        <p class="text-indigo-950 font-bold text-xl">{{count($total_order_success)}}</p>
-                    </div>
-    
-                    <div>
-                        <p class="text-slate-500 text-sm">Total Revenue:</p>
-                        <p class="text-indigo-950 font-bold text-xl">Rp {{number_format($my_revenue)}}</p>
+                        <p class="text-indigo-950 font-bold text-xl">{{ count($my_products) }}</p>
                     </div>
                 </div>
             </div>
