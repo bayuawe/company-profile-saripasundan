@@ -5,7 +5,7 @@
     <x-navbar />
 
     <header
-        class="bg-[url('{{ asset('images/backgrounds/hero-image.jpg') }}')] bg-cover bg-no-repeat bg-center relative z-0">
+        class="bg-[url('{{ asset('images/backgrounds/hero-image.jpg') }}')] mt-[3.9rem] md:mt-[4.3rem] bg-cover bg-no-repeat bg-center relative z-0">
         <!-- Gradient Overlay -->
         <div class="w-full h-full absolute top-0 bg-gradient-to-b from-white/70 to-white z-0"></div>
         <!-- Hero -->
@@ -13,7 +13,7 @@
             <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-24">
                 <div class="text-center">
 
-                    <h1 class="text-4xl sm:text-6xl font-bold text-yellow-400">
+                    <h1 class="text-4xl sm:text-6xl font-bold text-gray-800">
                         {{ $category->name }}
                     </h1>
 
@@ -112,6 +112,8 @@
     </section>
 
     <x-testimonials />
+
+    <x-faq />
 
     <x-footer />
 

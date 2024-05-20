@@ -5,14 +5,14 @@
     <x-navbar />
 
     <header
-        class="bg-[url('{{ asset('images/backgrounds/hero-image.jpg') }}')] bg-cover bg-no-repeat bg-center relative z-0">
+        class="bg-[url('{{ asset('images/backgrounds/hero-image.jpg') }}')] mt-[3.9rem] md:mt-[4.3rem]  bg-cover bg-no-repeat bg-center relative z-0">
         <!-- Gradient Overlay -->
         <div class="w-full h-full absolute top-0 bg-gradient-to-b from-white/70 to-white z-0"></div>
         <!-- Hero -->
         <div class="relative overflow-hidden">
             <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-24">
                 <div class="text-center">
-                    <h1 class="text-4xl sm:text-6xl font-bold text-yellow-400">
+                    <h1 class="text-4xl sm:text-6xl font-bold text-gray-800">
                         Selamat datang di <br>Sari Pasundan Pekanbaru
                     </h1>
 
@@ -125,17 +125,17 @@
                     </p>
                 @endforelse
 
-                <a class="group relative flex flex-col w-full min-h-60 bg-[url('https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3000&q=80')] bg-center bg-cover rounded-xl hover:shadow-lg transition"
-                    href="#">
-                    <div class="flex-auto p-4 md:p-6 shadow-md rounded-xl overflow-hidden hover:shadow-lg transition">
-                        <h3 class="text-xl text-white/90 group-hover:text-white"><span class="font-bold">Sari
+                <a class="group relative flex flex-col w-full min-h-60 bg-[url('https://images.unsplash.com/photo-1571456653714-a8db063a3e91?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-center bg-cover rounded-xl hover:shadow-lg transition"
+                    href="{{ route('front.search') }}">
+                    <div class="flex-auto p-4 md:p-6 shadow-sm rounded-xl overflow-hidden hover:shadow-lg transition">
+                        <h3 class="text-xl text-gray-800 group-hover:text-gray-900"><span class="font-bold">Sari
                                 Pasundan</span>
                             Pekanbaru menyediakan berbagai jajanan khas Jawa Barat.</h3>
                     </div>
                     <div class="pt-0 p-4 md:p-6">
                         <div
-                            class="inline-flex items-center gap-2 text-sm font-medium text-white group-hover:text-white/70">
-                            Visit the site
+                            class="inline-flex items-center gap-2 text-sm font-medium text-gray-800 group-hover:text-gray-900">
+                            Cari Produk Lainnya
                             <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24"
                                 height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                 stroke-linecap="round" stroke-linejoin="round">

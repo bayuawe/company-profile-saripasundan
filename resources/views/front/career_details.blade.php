@@ -50,10 +50,6 @@
         <!-- End Blog Article -->
     </section>
 
-    <x-testimonials />
-
-    <x-faq />
-
     <x-footer />
 
 

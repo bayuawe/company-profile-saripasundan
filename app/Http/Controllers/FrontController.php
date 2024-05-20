@@ -95,13 +95,6 @@ class FrontController extends Controller
     {
         return view('front.contact');
     }
-    public function media()
-    {
-        $media = Media::all();
-        return view('front.media', [
-            'media' => $media
-        ]);
-    }
 
     public function breadcrumbs()
     {

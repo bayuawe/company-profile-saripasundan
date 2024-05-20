@@ -19,28 +19,28 @@ class CategorySeeder extends Seeder
             [
                 'name' => 'Kue',
                 'slug' => 'kue',
-                'icon' => 'images/ic_ebook.svg',
+                'icon' => 'images/cake.svg',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
             [
                 'name' => 'Snack',
                 'slug' => 'snack',
-                'icon' => 'images/ic_course.svg',
+                'icon' => 'images/snack.svg',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
             [
                 'name' => 'Minuman',
                 'slug' => 'minuman',
-                'icon' => 'images/ic_template.svg',
+                'icon' => 'images/drink.svg',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
             [
                 'name' => 'Produk Lainnya',
                 'slug' => 'produk-lainnya',
-                'icon' => 'images/ic_font.svg',
+                'icon' => 'images/another.svg',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],

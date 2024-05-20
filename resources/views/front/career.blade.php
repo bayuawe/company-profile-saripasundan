@@ -47,12 +47,7 @@
 
             </div>
         </div>
-
     </section>
-
-    <x-testimonials />
-
-    <x-faq />
 
     <x-footer />
 

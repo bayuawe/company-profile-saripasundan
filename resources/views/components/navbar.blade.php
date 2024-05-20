@@ -1,5 +1,6 @@
 <!-- ========== HEADER ========== -->
-<header class="flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full bg-white text-sm py-3 md:py-0">
+<header
+    class="flex top-0 fixed shadow-md flex-wrap md:justify-start md:flex-nowrap z-50 w-full bg-white  text-sm py-3 md:py-0">
     <nav class="max-w-[85rem] w-full mx-auto px-4 md:px-6 lg:px-8" aria-label="Global">
         <div class="relative md:flex md:items-center md:justify-between">
             <div class="flex items-center justify-between">
@@ -30,7 +31,7 @@
             </div>
 
             <div id="navbar-collapse-with-animation"
-                class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow md:block">
+                class="hs-collapse  hidden overflow-hidden transition-all duration-300 basis-full grow md:block">
                 <div
                     class="overflow-hidden overflow-y-auto max-h-[75vh] [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-gray-300">
                     <div
@@ -54,7 +55,7 @@
                                 class="hs-dropdown-menu transition-[opacity,margin] duration-[0.1ms] md:duration-[150ms] hs-dropdown-open:opacity-100 opacity-0 md:w-80 hidden z-10 bg-white md:shadow-2xl rounded-lg py-2 md:p-2 before:absolute top-full before:-top-5 before:start-0 before:w-full before:h-5">
                                 <a class="inline-flex gap-x-5 w-full p-4 text-gray-600 rounded-lg hover:bg-gray-100 focus:ring-2 focus:ring-blue-500"
                                     href="{{ route('front.category', 1) }}">
-                                    <img src="{{ asset('images/ic_template.svg') }}" class="flex-shrink-0 size-5 mt-1"
+                                    <img src="{{ asset('images/cake.svg') }}" class="flex-shrink-0 size-5 mt-1"
                                         width="24" height="24">
                                     <div class="grow">
                                         <span class="block font-semibold mb-1 text-gray-800">Kue</span>
@@ -66,7 +67,7 @@
 
                                 <a class="inline-flex gap-x-5 w-full p-4 text-gray-600 rounded-lg hover:bg-gray-100 focus:ring-2 focus:ring-blue-500"
                                     href="{{ route('front.category', 2) }}">
-                                    <img src="{{ asset('images/ic_template.svg') }}" class="flex-shrink-0 size-5 mt-1"
+                                    <img src="{{ asset('images/snack.svg') }}" class="flex-shrink-0 size-5 mt-1"
                                         width="24" height="24">
                                     <div class="grow">
                                         <span class="block font-semibold mb-1 text-gray-800">Snack</span>
@@ -78,7 +79,7 @@
 
                                 <a class="inline-flex gap-x-5 w-full p-4 text-gray-600 rounded-lg hover:bg-gray-100 focus:ring-2 focus:ring-blue-500"
                                     href="{{ route('front.category', 3) }}">
-                                    <img src="{{ asset('images/ic_template.svg') }}" class="flex-shrink-0 size-5 mt-1"
+                                    <img src="{{ asset('images/drink.svg') }}" class="flex-shrink-0 size-5 mt-1"
                                         width="24" height="24">
                                     <div class="grow">
                                         <span class="block font-semibold mb-1 text-gray-800">Minuman</span>
@@ -90,7 +91,7 @@
 
                                 <a class="inline-flex gap-x-5 w-full p-4 text-gray-600 rounded-lg hover:bg-gray-100 focus:ring-2 focus:ring-blue-500"
                                     href="{{ route('front.category', 4) }}">
-                                    <img src="{{ asset('images/ic_template.svg') }}" class="flex-shrink-0 size-5 mt-1"
+                                    <img src="{{ asset('images/another.svg') }}" class="flex-shrink-0 size-5 mt-1"
                                         width="24" height="24">
                                     <div class="grow">
                                         <span class="block font-semibold mb-1 text-gray-800">Produk Lainnya</span>
@@ -189,7 +190,7 @@
                                                     Kesempatan kerja yang tersedia di Sari Pasundan
                                                 </p>
                                                 <p
-                                                    class="mt-3 inline-flex items-center gap-x-1 text-sm text-blue-600 decoration-2 hover:underline font-medium">
+                                                    class="mt-3 inline-flex items-center gap-x-1 text-sm text-yellow-400 decoration-2 hover:underline font-medium">
                                                     Lihat
                                                     <svg class="flex-shrink-0 size-4 transition ease-in-out group-hover:translate-x-1"
                                                         xmlns="http://www.w3.org/2000/svg" width="24"

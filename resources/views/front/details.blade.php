@@ -4,7 +4,7 @@
 
     <x-navbar />
 
-    <header class="w-full pt-[74px] pb-[103px] relative z-0">
+    <header class="w-full pt-[74px] pb-[103px] relative z-0 mt-[3.9rem] md:mt-[4.3rem]">
         <div class="background-image w-full h-full absolute top-0 overflow-hidden z-0">
             <img src="{{ Storage::url($product->cover) }}" class="w-full h-full object-cover" alt="hero image">
         </div>
