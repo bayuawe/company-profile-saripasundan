@@ -18,7 +18,8 @@ class ProductController extends Controller
     public function index()
     {
         //
-        $products = Product::where('creator_id', Auth::id())->get();
+
+        $products = Product::where('creator_id', Auth::id())->paginate(10);
         return view('admin.products.index', [
             'products' => $products
         ]);

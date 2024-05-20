@@ -16,7 +16,7 @@ class CareerController extends Controller
      */
     public function index()
     {
-        $careers = Career::where('creator_id', auth()->id())->get();
+        $careers = Career::where('creator_id', auth()->id())->paginate(10);
         return view('admin.careers.index', [
             'careers' => $careers
         ]);

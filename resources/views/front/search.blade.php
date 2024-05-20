@@ -80,27 +80,29 @@
         <div class="grid grid-cols-4 gap-[22px]">
 
             @forelse($products as $product)
-                <a class="group block shadow-lg rounded-xl overflow-hidden hover:shadow-xl transition bg-yellow-500"
+                <a class="group block shadow-lg rounded-xl overflow-hidden hover:shadow-xl transition bg-yellow-400"
                     href="{{ route('front.details', $product->slug) }}">
                     <div class="relative pt-[50%] sm:pt-[70%] rounded-xl overflow-hidden">
                         <img class="size-full absolute top-0 start-0 object-cover group-hover:scale-110 transition-transform duration-300 ease-in-out rounded-xl"
                             src="{{ Storage::url($product->cover) }}" alt="{{ $product->name }}">
                         <span
-                            class="absolute top-0 end-0 rounded-se-xl rounded-es-xl text-sm font-semibold bg-yellow-500 text-black py-2 px-4">
+                            class="absolute top-0 end-0 rounded-se-xl rounded-es-xl text-sm font-semibold bg-yellow-200 text-gray-800 py-2 px-4">
                             {{ $product->category->name }}
+                        </span>
+
+                        <span
+                            class="absolute bottom-4 start-4 rounded-xl text-sm font-semibold bg-yellow-400 text-gray-800 py-2 px-4">
+                            Rp. {{ number_format($product->price) }}
                         </span>
                     </div>
 
-                    <div class="p-5">
+                    <div class="p-5 flex flex-col">
                         <h3 class="text-2xl font-bold text-gray-900 group-hover:text-gray-800">
                             {{ $product->name }}
                         </h3>
                         <p class="mt-2 text-lg text-yellow-700">
-                            {{ Str::limit($product->about, 15) }}
+                            {{ Str::limit($product->about, 10) }}
                         </p>
-                        <div class="mt-4 text-2xl font-bold text-gray-900 relative">
-                            Rp. {{ number_format($product->price) }}
-                        </div>
                     </div>
                 </a>
             @empty

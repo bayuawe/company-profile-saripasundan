@@ -28,6 +28,10 @@
                             class="flex-shrink-0 relative rounded-xl overflow-hidden w-full h-[350px] before:absolute before:inset-x-0 before:z-[1] before:size-full before:bg-gradient-to-t before:from-gray-900/70">
                             <img class="size-full absolute top-0 start-0 object-cover"
                                 src="{{ Storage::url($career->cover) }}" alt="{{ $career->title }}">
+                            <span
+                                class="absolute top-4 end-4 rounded-xl text-sm font-semibold bg-yellow-400 text-gray-800 py-2 px-4 shadow-md">
+                                {{ $career->created_at->format('d F Y') }}
+                            </span>
                         </div>
 
                         <div class="absolute bottom-0 inset-x-0 z-10">

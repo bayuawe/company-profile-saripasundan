@@ -48,10 +48,11 @@
                     </div>
 
                     <div class="mt-4">
-                        <x-input-label for="requirements" :value="__('Requirements')" />
+                        <x-input-label for="requirements" :value="__('Requirments')" />
                         <x-forms.richtext id="requirements" class="block mt-1 w-full" type="text" name="requirements"
                             :value="old('requirements')" required autofocus autocomplete="requirements" />
                         <x-input-error :messages="$errors->get('requirements')" class="mt-2" />
+                        <p class="text-sm text-gray-500 mt-2">Tambahkan " | " pada setiap belakang poin</p>
                     </div>
 
                     <div class="mt-4">

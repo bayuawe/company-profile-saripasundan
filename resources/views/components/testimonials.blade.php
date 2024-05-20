@@ -236,8 +236,8 @@
                 <!-- Stats -->
                 <div>
                     <h4 class="text-lg sm:text-xl font-semibold text-white">Happy customer</h4>
-                    <p class="mt-2 sm:mt-3 text-4xl sm:text-6xl font-bold text-gray-800">85%</p>
-                    <p class="mt-1 text-white">this year alone</p>
+                    <p class="mt-2 sm:mt-3 text-4xl sm:text-6xl font-bold text-gray-800">4,6</p>
+                    <p class="mt-1 text-white">Rating Google Maps</p>
                 </div>
                 <!-- End Stats -->
             </div>
