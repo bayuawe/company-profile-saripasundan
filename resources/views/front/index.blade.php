@@ -91,7 +91,7 @@
                 <p class="mt-1 text-yellow-600">Temukan produk yang paling laris di Sari Pasundan Pekanbaru.</p>
             </div>
 
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" id="produk">
                 @forelse($products as $product)
                     <a class="group block shadow-lg rounded-xl overflow-hidden hover:shadow-xl transition bg-yellow-400"
                         href="{{ route('front.details', $product->slug) }}">
