@@ -74,41 +74,44 @@
         <!-- End Hero -->
     </header>
 
+    <section class="py-10">
+        <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+            <div class="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
+                <h2 class="text-2xl font-bold md:text-4xl md:leading-tight text-yellow-400">Hasil Pencarian</h2>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                @forelse($products as $product)
+                    <a class="group block shadow-lg rounded-xl overflow-hidden hover:shadow-xl transition bg-yellow-400"
+                        href="{{ route('front.details', $product->slug) }}">
+                        <div class="relative pt-[50%] sm:pt-[70%] rounded-xl overflow-hidden">
+                            <img class="size-full absolute top-0 start-0 object-cover group-hover:scale-110 transition-transform duration-300 ease-in-out rounded-xl"
+                                src="{{ Storage::url($product->cover) }}" alt="{{ $product->name }}">
+                            <span
+                                class="absolute top-0 end-0 rounded-se-xl rounded-es-xl text-sm font-semibold bg-yellow-200 text-gray-800 py-2 px-4">
+                                {{ $product->category->name }}
+                            </span>
 
-    <section id="NewProduct" class="container max-w-[1130px] mx-auto mb-[102px] flex flex-col gap-8">
-        <h2 class="font-semibold text-[32px]">Results</h2>
-        <div class="grid grid-cols-4 gap-[22px]">
+                            <span
+                                class="absolute bottom-4 start-4 rounded-xl text-sm font-semibold bg-yellow-400 text-gray-800 py-2 px-4">
+                                Rp. {{ number_format($product->price) }}
+                            </span>
+                        </div>
 
-            @forelse($products as $product)
-                <a class="group block shadow-lg rounded-xl overflow-hidden hover:shadow-xl transition bg-yellow-400"
-                    href="{{ route('front.details', $product->slug) }}">
-                    <div class="relative pt-[50%] sm:pt-[70%] rounded-xl overflow-hidden">
-                        <img class="size-full absolute top-0 start-0 object-cover group-hover:scale-110 transition-transform duration-300 ease-in-out rounded-xl"
-                            src="{{ Storage::url($product->cover) }}" alt="{{ $product->name }}">
-                        <span
-                            class="absolute top-0 end-0 rounded-se-xl rounded-es-xl text-sm font-semibold bg-yellow-200 text-gray-800 py-2 px-4">
-                            {{ $product->category->name }}
-                        </span>
-
-                        <span
-                            class="absolute bottom-4 start-4 rounded-xl text-sm font-semibold bg-yellow-400 text-gray-800 py-2 px-4">
-                            Rp. {{ number_format($product->price) }}
-                        </span>
-                    </div>
-
-                    <div class="p-5 flex flex-col">
-                        <h3 class="text-2xl font-bold text-gray-900 group-hover:text-gray-800">
-                            {{ $product->name }}
-                        </h3>
-                        <p class="mt-2 text-lg text-yellow-700">
-                            {{ Str::limit($product->about, 10) }}
-                        </p>
-                    </div>
-                </a>
-            @empty
-                <p class="text-center text-yellow-400 text-xl">Produk Tidak Tersedia</p>
-            @endforelse
-
+                        <div class="p-5 flex flex-col">
+                            <h3 class="text-2xl font-bold text-gray-900 group-hover:text-gray-800">
+                                {{ $product->name }}
+                            </h3>
+                            <p class="mt-2 text-lg text-yellow-700">
+                                {{ Str::limit($product->about, 10) }}
+                            </p>
+                        </div>
+                    </a>
+                @empty
+                    <p>
+                        Produk tidak tersedia
+                    </p>
+                @endforelse
+            </div>
         </div>
     </section>
 

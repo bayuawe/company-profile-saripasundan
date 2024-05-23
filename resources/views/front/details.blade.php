@@ -1,5 +1,5 @@
 @extends('front.layouts.app')
-@section('title', 'Belibang Digital Marketplace')
+@section('title', 'Sari Pasundan | Product Details')
 @section('content')
 
     <x-navbar />
@@ -140,8 +140,11 @@
         <!-- End Hero -->
     </section>
 
-    <section>
+    <section class="py-10">
         <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+            <div class="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
+                <h2 class="text-2xl font-bold md:text-4xl md:leading-tight text-yellow-400">Produk Lainnya</h2>
+            </div>
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 @forelse($other_products as $product)
                     <a class="group block shadow-lg rounded-xl overflow-hidden hover:shadow-xl transition bg-yellow-400"
