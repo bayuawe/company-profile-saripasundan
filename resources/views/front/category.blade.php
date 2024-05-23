@@ -1,5 +1,5 @@
 @extends('front.layouts.app')
-@section('title', 'Belibang Digital Marketplace')
+@section('title', 'Sari Pasundan | Category')
 @section('content')
 
     <x-navbar />

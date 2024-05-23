@@ -1,22 +1,82 @@
 @extends('front.layouts.app')
-@section('title', 'Sari Pasudan - Pekanbaru')
+@section('title', 'Sari Pasudan | Career Details')
 @section('content')
 
     <x-navbar />
 
-    <section>
+    <section class="py-20">
         <!-- Blog Article -->
         <div class="max-w-3xl px-4 pt-6 lg:pt-10 pb-12 sm:px-6 lg:px-8 mx-auto">
             <!-- Content -->
             <div class="space-y-5 md:space-y-8">
 
+                <div class="flex justify-between items-center mb-6">
+                    <div class="flex w-full sm:items-center gap-x-5 sm:gap-x-3">
+                        <div class="flex-shrink-0">
+                            <img class="size-12 rounded-full" src="{{ Storage::url($career->creator->avatar) }}"
+                                alt="Image Description">
+                        </div>
+
+                        <div class="grow">
+                            <div class="flex justify-between items-center gap-x-2">
+                                <div>
+                                    <!-- Tooltip -->
+                                    <div class="hs-tooltip [--trigger:hover] [--placement:bottom] inline-block">
+                                        <div class="hs-tooltip-toggle sm:mb-1 block text-start cursor-pointer">
+                                            <span class="font-semibold text-gray-800">
+                                                {{ $career->creator->name }}
+                                            </span>
+
+                                            <!-- Dropdown Card -->
+                                            <div class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 max-w-xs cursor-default bg-white divide-y divide-gray-700 shadow-lg rounded-xl"
+                                                role="tooltip">
+                                                <!-- Body -->
+                                                <div class="p-4 sm:p-5">
+                                                    <div class="mb-2 flex w-full sm:items-center gap-x-5 sm:gap-x-3">
+                                                        <div class="flex-shrink-0">
+                                                            <img class="size-8 rounded-full"
+                                                                src="{{ Storage::url($career->creator->avatar) }}"
+                                                                alt="Image Description">
+                                                        </div>
+
+                                                        <div class="grow">
+                                                            <p class="text-lg font-semibold text-gray-800">
+                                                                {{ $career->creator->name }}
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <p class="italic text-sm text-gray-800 dark:text-neutral-400">
+                                                        Supervisor Sari Pasundan Pekanbaru
+                                                    </p>
+                                                </div>
+                                                <!-- End Body -->
+
+                                            </div>
+                                            <!-- End Dropdown Card -->
+                                        </div>
+                                    </div>
+                                    <!-- End Tooltip -->
+
+                                    <ul class="text-xs text-gray-500 dark:text-neutral-500">
+                                        <li
+                                            class="inline-block relative pe-6 last:pe-0 last-of-type:before:hidden before:absolute before:top-1/2 before:end-2 before:-translate-y-1/2 before:size-1 before:bg-gray-300 before:rounded-full dark:text-neutral-400 dark:before:bg-neutral-600">
+                                            {{ $career->created_at->format('d F Y') }}
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Avatar Media -->
+
                 <div class="space-y-3">
-                    <h1 class="text-2xl font-bold md:text-3xl text-yellow-400">We're Hiring: Team {{ $career->title }}
+                    <h1 class="text-2xl font-bold md:text-3xl text-yellow-400">We're Hiring: Posisi {{ $career->title }}
                     </h1>
                 </div>
 
                 <figure>
-                    <img class="w-full object-cover rounded-xl" src="{{ Storage::url($career->cover) }}"
+                    <img class="h-96 w-full object-cover rounded-xl" src="{{ Storage::url($career->cover) }}"
                         alt="{{ $career->title }}">
                 </figure>
 
