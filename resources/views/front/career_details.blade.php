@@ -13,7 +13,7 @@
                 <div class="flex justify-between items-center mb-6">
                     <div class="flex w-full sm:items-center gap-x-5 sm:gap-x-3">
                         <div class="flex-shrink-0">
-                            <img class="size-12 rounded-full" src="{{ Storage::url($career->creator->avatar) }}"
+                            <img class="size-12 rounded-full" src="{{ $career->creator->avatar) }}"
                                 alt="Image Description">
                         </div>
 
@@ -35,7 +35,7 @@
                                                     <div class="mb-2 flex w-full sm:items-center gap-x-5 sm:gap-x-3">
                                                         <div class="flex-shrink-0">
                                                             <img class="size-8 rounded-full"
-                                                                src="{{ Storage::url($career->creator->avatar) }}"
+                                                                src="{{ $career->creator->avatar }}"
                                                                 alt="Image Description">
                                                         </div>
 
@@ -76,7 +76,7 @@
                 </div>
 
                 <figure>
-                    <img class="h-96 w-full object-cover rounded-xl" src="{{ Storage::url($career->cover) }}"
+                    <img class="h-96 w-full object-cover rounded-xl" src="{{ $career->cover }}"
                         alt="{{ $career->title }}">
                 </figure>
 

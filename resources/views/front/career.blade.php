@@ -4,18 +4,21 @@
 
     <x-navbar />
 
-    <header
-        class="bg-[url('{{ asset('images/backgrounds/hero-image.jpg') }}')] bg-cover bg-no-repeat bg-center relative z-0">
-        <div class="w-full h-full absolute top-0 bg-gradient-to-b from-white/70 to-white z-0"></div>
+    <header class=" mt-[3.9rem] md:mt-[4.3rem] bg-cover bg-no-repeat bg-center relative z-0">
+        <!-- Hero -->
         <div class="relative overflow-hidden">
             <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-24">
                 <div class="text-center">
-                    <h1 class="text-4xl sm:text-6xl font-bold text-yellow-400">
-                        Yuk berkontribusi dalam menjalin kebermanfaatan jajanan khas Jawa Barat
+
+                    <h1 class="text-4xl sm:text-6xl font-bold text-gray-800" style="margin-bottom: 10px;">
+                        Kesempatan Berkarir di <br> Sari Pasundan Pekanbaru
                     </h1>
+                    <div class="mt-7 sm:mt-12 mx-auto max-w-xl relative">
+                    </div>
                 </div>
             </div>
         </div>
+        <!-- End Hero -->
     </header>
 
     <section>
@@ -26,8 +29,8 @@
                     <a class="group relative block rounded-xl" href="{{ route('front.career_details', $career->slug) }}">
                         <div
                             class="flex-shrink-0 relative rounded-xl overflow-hidden w-full h-[350px] before:absolute before:inset-x-0 before:z-[1] before:size-full before:bg-gradient-to-t before:from-gray-900/70">
-                            <img class="size-full absolute top-0 start-0 object-cover"
-                                src="{{ Storage::url($career->cover) }}" alt="{{ $career->title }}">
+                            <img class="size-full absolute top-0 start-0 object-cover" src="{{ $career->cover }}"
+                                alt="{{ $career->title }}">
                             <span
                                 class="absolute top-4 end-4 rounded-xl text-sm font-semibold bg-yellow-400 text-gray-800 py-2 px-4 shadow-md">
                                 {{ $career->created_at->format('d F Y') }}

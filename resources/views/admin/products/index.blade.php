@@ -64,7 +64,7 @@
                                             </label>
                                         </th>
 
-                                        <th scope="col" class="ps-6 lg:ps-3 xl:ps-0 pe-6 py-3 text-start">
+                                        <th scope="col" class="px-6 lg:ps-3 xl:ps-0 pe-6 py-3 text-start">
                                             <div class="flex items-center gap-x-2">
                                                 <span
                                                     class="text-xs font-semibold uppercase tracking-wide text-gray-800">
@@ -125,22 +125,19 @@
                                 @forelse($products as $product)
                                     <tbody class="divide-y divide-gray-200">
                                         <tr>
-                                            <td class="size-px whitespace-nowrap">
-                                                <div class="ps-6 py-3">
-                                                    <label for="hs-at-with-checkboxes-1" class="flex">
-                                                        <input type="checkbox"
-                                                            class="shrink-0 border-gray-300 rounded text-blue-600 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none"
-                                                            id="hs-at-with-checkboxes-1">
-                                                        <span class="sr-only">Checkbox</span>
-                                                    </label>
-                                                </div>
-                                            </td>
+                                            <th scope="col" class="px-6 py-3 text-start">
+                                                <label for="hs-at-with-checkboxes-main" class="flex">
+                                                    <input type="checkbox"
+                                                        class="shrink-0 border-gray-300 rounded text-blue-600 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none"
+                                                        id="hs-at-with-checkboxes-main">
+                                                    <span class="sr-only">Checkbox</span>
+                                                </label>
+                                            </th>
                                             <td class="size-px whitespace-nowrap">
                                                 <div class="ps-6 lg:ps-3 xl:ps-0 pe-6 py-3">
                                                     <div class="flex items-center gap-x-3">
                                                         <img class="inline-block max-w-28 h-auto object-cover rounded"
-                                                            src="{{ Storage::url($product->cover) }}"
-                                                            alt="Image Description">
+                                                            src="{{ $product->cover }}" alt="Image Description">
                                                     </div>
                                                 </div>
                                             </td>
@@ -157,7 +154,7 @@
                                             <td class="h-px w-72 whitespace-nowrap">
                                                 <div class="px-6 py-3">
                                                     <span
-                                                        class="block italic text-sm text-gray-800">{{ Str::limit($product->about, 10) }}
+                                                        class="block italic text-sm text-gray-800">{{ Str::limit($product->about, 15) }}
                                                     </span>
                                                 </div>
                                             </td>

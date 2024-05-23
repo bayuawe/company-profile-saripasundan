@@ -29,7 +29,7 @@
                     </h2>
                     <p class="mt-5">
                         <a class="inline-flex items-center gap-x-1 font-medium text-yellow-400"
-                            href="{{ route('front.index') }}">
+                            href="{{ route('front.search') }}">
                             Lihat Produk
                             <svg class="flex-shrink-0 size-4 transition ease-in-out group-hover:translate-x-1"
                                 xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"

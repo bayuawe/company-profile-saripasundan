@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
+use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 
 class ProductController extends Controller
 {
@@ -17,8 +18,6 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
-
         $products = Product::where('creator_id', Auth::id())->paginate(10);
         return view('admin.products.index', [
             'products' => $products
@@ -30,7 +29,6 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
         $categories = Category::all();
         return view('admin.products.create', [
             'categories' => $categories
@@ -42,8 +40,6 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
-
         $validated = $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'cover' => ['required', 'image', 'mimes:png,jpg,jpeg'],
@@ -52,20 +48,22 @@ class ProductController extends Controller
             'price' => ['required', 'integer', 'min:0'],
         ]);
 
-
         DB::beginTransaction();
 
         try {
             if ($request->hasFile('cover')) {
-                $coverPath = $request->file('cover')->store('product_covers', 'public');
-                $validated['cover'] = $coverPath;
+                // Mengunggah gambar ke Cloudinary
+                $uploadedFileUrl = Cloudinary::upload($request->file('cover')->getRealPath())->getSecurePath();
+                $validated['cover'] = $uploadedFileUrl;
             }
+
             $validated['slug'] = Str::slug($request->name);
             $validated['creator_id'] = Auth::id();
             $newProduct = Product::create($validated);
+
             DB::commit();
 
-            return redirect()->route('admin.products.index')->with('success', 'Product created successfuly!');
+            return redirect()->route('admin.products.index')->with('success', 'Product created successfully!');
         } catch (\Exception $e) {
             DB::rollBack();
 
@@ -90,7 +88,6 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
         $categories = Category::all();
         return view('admin.products.edit', [
             'product' => $product,
@@ -103,25 +100,23 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
-
         $validated = $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'cover' => ['sometimes', 'image', 'mimes:png,jpg,jpeg'],
+            'cover' => ['sometimes', 'image', 'mimes:png,jpg,jpeg', 'max:2048'],
             'about' => ['required', 'string', 'max:65535'],
             'category_id' => ['required', 'integer'],
             'price' => ['required', 'integer', 'min:0'],
         ]);
 
-
         DB::beginTransaction();
 
         try {
-
             if ($request->hasFile('cover')) {
-                $coverPath = $request->file('cover')->store('product_covers', 'public');
-                $validated['cover'] = $coverPath;
+                // Mengunggah gambar baru ke Cloudinary
+                $uploadedFileUrl = Cloudinary::upload($request->file('cover')->getRealPath())->getSecurePath();
+                $validated['cover'] = $uploadedFileUrl;
             }
+
             $validated['slug'] = Str::slug($request->name);
             $validated['creator_id'] = Auth::id();
 
@@ -129,7 +124,7 @@ class ProductController extends Controller
 
             DB::commit();
 
-            return redirect()->route('admin.products.index')->with('success', 'Product created successfuly!');
+            return redirect()->route('admin.products.index')->with('success', 'Product updated successfully!');
         } catch (\Exception $e) {
             DB::rollBack();
 
@@ -146,12 +141,10 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
         try {
             $product->delete();
-            return redirect()->route('admin.products.index')->with('success', 'Product deleted successfuly!');
+            return redirect()->route('admin.products.index')->with('success', 'Product deleted successfully!');
         } catch (\Exception $e) {
-
             $error = ValidationException::withMessages([
                 'system_error' => ['System error!' . $e->getMessage()],
             ]);

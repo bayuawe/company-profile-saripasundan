@@ -7,21 +7,28 @@
                     <div class="p-1.5 min-w-full inline-block align-middle">
                         <div class="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
 
-                            @if ($errors->any())
-                                <div class="alert alert-danger">
-                                    <ul>
-                                        @foreach ($errors->all() as $error)
-                                            <li class="py-5 bg-red-500 text-white font-bold">
-                                                {{ $error }}
-                                            </li>
-                                        @endforeach
-                                    </ul>
-                                </div>
-                            @endif
-
-                            <form method="POST" action="{{ route('admin.products.store') }}"
-                                enctype="multipart/form-data" class="px-10 py-6">
+                            <form method="POST" action="{{ route('admin.products.store') }}" enctype="multipart/form-data"
+                                class="px-10 py-6">
                                 @csrf
+
+                                @if ($errors->any())
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li class="py-5 bg-red-500 text-white font-bold">
+                                                    {{ $error }}
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
+
+                                @if (session('success'))
+                                    <div class="alert alert-success">
+                                        {{ session('success') }}
+                                    </div>
+                                @endif
+
 
                                 <h1 class="text-gray-800 text-3xl font-bold">Add New Product</h1>
 
@@ -55,13 +62,11 @@
                                     <select name="category_id" id="category"
                                         class="w-full py-3 pl-5 border border-gray-300 rounded-lg">
                                         <option value="">Select category</option>
-
                                         @forelse($categories as $category)
                                             <option class="rounded-lg" value="{{ $category->id }}">{{ $category->name }}
                                             </option>
                                         @empty
                                         @endforelse
-
                                     </select>
                                     <x-input-error :messages="$errors->get('category')" class="mt-2" />
                                 </div>
@@ -72,8 +77,7 @@
                                     <x-input-error :messages="$errors->get('category')" class="mt-2" />
                                 </div>
 
-                                <div class="flex items-center justify-end mt-4 ">
-
+                                <div class="flex items-center justify-end mt-4">
                                     <x-primary-button class="ms-4">
                                         {{ __('Add Product') }}
                                     </x-primary-button>
@@ -85,6 +89,5 @@
             </div>
         </div>
     </div>
-
 
 </x-app-layout>

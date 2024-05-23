@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
+use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 
 class CareerController extends Controller
 {
@@ -27,7 +28,6 @@ class CareerController extends Controller
      */
     public function create()
     {
-        //
         return view('admin.careers.create');
     }
 
@@ -36,10 +36,9 @@ class CareerController extends Controller
      */
     public function store(Request $request)
     {
-        //
         $validated = $request->validate([
             'title' => ['required', 'string', 'max:255'],
-            'cover' => ['required', 'image', 'mimes:jpeg,png,jpg,'],
+            'cover' => ['required', 'image', 'mimes:jpeg,png,jpg'],
             'description' => ['required', 'string'],
             'requirements' => ['required', 'string'],
             'benefits' => ['required', 'string'],
@@ -47,11 +46,14 @@ class CareerController extends Controller
         ]);
 
         DB::beginTransaction();
+
         try {
             if ($request->hasFile('cover')) {
-                $coverPath = $request->file('cover')->store('career_covers', 'public');
-                $validated['cover'] = $coverPath;
+                // Mengunggah gambar ke Cloudinary
+                $uploadedFileUrl = Cloudinary::upload($request->file('cover')->getRealPath())->getSecurePath();
+                $validated['cover'] = $uploadedFileUrl;
             }
+
             $validated['slug'] = Str::slug($request->title);
             $validated['creator_id'] = Auth::id();
             $newCareer = Career::create($validated);
@@ -74,7 +76,6 @@ class CareerController extends Controller
     public function show(Career $career)
     {
         //
-
     }
 
     /**
@@ -82,7 +83,6 @@ class CareerController extends Controller
      */
     public function edit(Career $career)
     {
-        //
         return view('admin.careers.edit', [
             'career' => $career
         ]);
@@ -93,10 +93,9 @@ class CareerController extends Controller
      */
     public function update(Request $request, Career $career)
     {
-        //
         $validated = $request->validate([
             'title' => ['required', 'string', 'max:255'],
-            'cover' => ['sometimes', 'image', 'mimes:jpeg,png,jpg,'],
+            'cover' => ['sometimes', 'image', 'mimes:jpeg,png,jpg', 'max:2048'],
             'description' => ['required', 'string'],
             'requirements' => ['required', 'string'],
             'benefits' => ['required', 'string'],
@@ -104,10 +103,12 @@ class CareerController extends Controller
         ]);
 
         DB::beginTransaction();
+
         try {
             if ($request->hasFile('cover')) {
-                $coverPath = $request->file('cover')->store('career_covers', 'public');
-                $validated['cover'] = $coverPath;
+                // Mengunggah gambar baru ke Cloudinary
+                $uploadedFileUrl = Cloudinary::upload($request->file('cover')->getRealPath())->getSecurePath();
+                $validated['cover'] = $uploadedFileUrl;
             }
 
             $validated['slug'] = Str::slug($request->title);
@@ -133,12 +134,10 @@ class CareerController extends Controller
      */
     public function destroy(Career $career)
     {
-        //
         try {
             $career->delete();
-            return redirect()->route('admin.careers.index')->with('success', 'Career deleted successfuly!');
+            return redirect()->route('admin.careers.index')->with('success', 'Career deleted successfully!');
         } catch (\Exception $e) {
-
             $error = ValidationException::withMessages([
                 'system_error' => ['System error!' . $e->getMessage()],
             ]);

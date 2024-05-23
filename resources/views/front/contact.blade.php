@@ -20,7 +20,7 @@
 
     <section>
         <!-- Contact -->
-        <div class="max-w-7xl px-4 lg:px-6 lg:px-8 py-12 lg:py-24 mx-auto">
+        <div class="max-w-7xl px-4 lg:px-8 py-12 lg:py-24 mx-auto">
             <div class="grid grid-cols-1 lg:grid-cols-2 lg:items-center gap-6 md:gap-8 lg:gap-12">
                 <div class="aspect-w-16 aspect-h-6 lg:aspect-h-14 overflow-hidden bg-gray-100 rounded-2xl">
                     <iframe

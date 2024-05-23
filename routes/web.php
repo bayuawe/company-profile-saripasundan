@@ -1,12 +1,9 @@
 <?php
 
 use App\Http\Controllers\CareerController;
-use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FrontController;
-use App\Http\Controllers\MediaController;
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\ProductOrderController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 

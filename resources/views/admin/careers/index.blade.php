@@ -120,9 +120,7 @@
                                                 <div class="ps-6 lg:ps-3 xl:ps-0 pe-6 py-3">
                                                     <div class="flex items-center gap-x-3">
                                                         <img class="inline-block max-w-28 h-auto object-cover rounded"
-                                                            src="{{ Storage::url($career->cover) }}"
-                                                            alt="Image Description">
-
+                                                            src="{{ $career->cover }}" alt="Image Description">
                                                     </div>
                                                 </div>
                                             </td>

@@ -12,26 +12,28 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
+use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 
 class RegisteredUserController extends Controller
 {
     /**
-     * Display the registration view.
+     * Menampilkan tampilan registrasi.
      */
     public function index()
     {
-
         return view('admin.index', []);
     }
 
-
+    /**
+     * Menampilkan formulir registrasi.
+     */
     public function create(): View
     {
         return view('auth.register');
     }
 
     /**
-     * Handle an incoming registration request.
+     * Menangani permintaan registrasi yang masuk.
      *
      * @throws \Illuminate\Validation\ValidationException
      */
@@ -39,28 +41,29 @@ class RegisteredUserController extends Controller
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'avatar' => ['required', 'image', 'mimes:png,jpg,jpeg'],
+            'avatar' => ['required', 'image', 'mimes:png,jpg,jpeg', 'max:2048'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
-        if ($request->hasFile('avatar')) {
-            $avatarPath = $request->file('avatar')->store('avatars', 'public');
-        } else {
-            $avatarPath = 'images/avatar-default.png';
-        }
+        // Mengunggah avatar pengguna ke Cloudinary
+        $avatar = Cloudinary::upload($request->file('avatar')->getRealPath())->getSecurePath();
 
+        // Membuat pengguna baru
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'avatar' => $avatarPath, //menyimpan path image dari storage
+            'avatar' => $avatar, // Menyimpan URL gambar dari Cloudinary
             'password' => Hash::make($request->password),
         ]);
 
+        // Mengirimkan event Registered
         event(new Registered($user));
 
+        // Login pengguna yang baru terdaftar
         Auth::login($user);
 
+        // Redirect ke halaman beranda
         return redirect(RouteServiceProvider::HOME);
     }
 }

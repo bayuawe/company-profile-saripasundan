@@ -97,7 +97,7 @@
                         href="{{ route('front.details', $product->slug) }}">
                         <div class="relative pt-[50%] sm:pt-[70%] rounded-xl overflow-hidden">
                             <img class="size-full absolute top-0 start-0 object-cover group-hover:scale-110 transition-transform duration-300 ease-in-out rounded-xl"
-                                src="{{ Storage::url($product->cover) }}" alt="{{ $product->name }}">
+                                src="{{ $product->cover }}" alt="{{ $product->name }}">
                             <span
                                 class="absolute top-0 end-0 rounded-se-xl rounded-es-xl text-sm font-semibold bg-yellow-200 text-gray-800 py-2 px-4">
                                 {{ $product->category->name }}
