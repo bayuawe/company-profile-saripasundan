@@ -212,35 +212,6 @@
                             href="{{ route('front.contact') }}">
                             Lokasi Outlet
                         </a>
-
-                        <div class="pt-3 md:pt-0">
-                            @guest
-                                <a class="py-2.5 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-yellow-400 text-white hover:bg-yellow-400 hover:text-gray-800 disabled:opacity-50 disabled:pointer-events-none"
-                                    href="{{ route('login') }}">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none"
-                                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M12 12c2.28 0 4-1.72 4-4s-1.72-4-4-4-4 1.72-4 4 1.72 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-                                    </svg>
-                                    Login
-                                </a>
-                                <a class="py-2.5 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-yellow-400 text-white hover:bg-yellow-400 hover:text-gray-800 disabled:opacity-50 disabled:pointer-events-none"
-                                    href="{{ route('register') }}">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none"
-                                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
-                                    </svg>
-                                    Register
-                                </a>
-                            @endguest
-
-                            @auth
-                                <a class="py-2.5 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-yellow-400 text-white hover:bg-yellow-400 hover:text-gray-800 disabled:opacity-50 disabled:pointer-events-none"
-                                    href="{{ route('register') }}">
-                                    My Dashboard
-                                </a>
-                            @endauth
-                        </div>
                     </div>
                 </div>
             </div>
