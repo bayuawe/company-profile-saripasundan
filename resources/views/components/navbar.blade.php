@@ -1,4 +1,3 @@
-<!-- ========== HEADER ========== -->
 <header
     class="flex top-0 fixed shadow-md flex-wrap md:justify-start md:flex-nowrap z-50 w-full bg-white  text-sm py-3 md:py-0">
     <nav class="max-w-[85rem] w-full mx-auto px-4 md:px-6 lg:px-8" aria-label="Global">
@@ -171,7 +170,7 @@
                                                 <p class="font-medium text-gray-800">Kontak Kami
                                                 </p>
                                                 <p class="text-sm text-gray-500 hover:text-gray-800">
-                                                    Learn, share, and connect with other Preline users.</p>
+                                                    Terhubung dengan Sari Pasundan.</p>
                                             </div>
                                         </a>
                                     </div>
@@ -179,7 +178,7 @@
                                     <div class="flex flex-col pt-4 md:pt-0 mx-1 md:mx-0">
                                         <span class="text-sm font-semibold uppercase text-gray-800">Karir</span>
 
-                                        <!-- Link -->
+
                                         <a class="group mt-2 p-3 flex gap-x-5 items-center rounded-xl hover:bg-gray-100"
                                             href="{{ route('front.career') }}">
                                             <img class="size-32 rounded-lg"
@@ -202,7 +201,6 @@
                                                 </p>
                                             </div>
                                         </a>
-                                        <!-- End Link -->
                                     </div>
                                 </div>
                             </div>
@@ -218,4 +216,3 @@
         </div>
     </nav>
 </header>
-<!-- ========== END HEADER ========== -->

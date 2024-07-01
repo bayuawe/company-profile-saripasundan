@@ -12,15 +12,15 @@
                         Login
                     </h1>
 
-                    <div class="mt-6">
+                    {{-- <div class="mt-6">
                         <h1 class="text-gray-500 dark:text-gray-300">Didn't have an account? <a
                                 href="{{ route('register') }}" class="text-yellow-400 hover:underline">Register</a></h1>
-                    </div>
+                    </div> --}}
 
                     <x-auth-session-status class="mb-4" :status="session('status')" />
 
-                    <form class="grid grid-cols-1 gap-6 mt-8 md:grid-cols-2" method="POST"
-                        action="{{ route('login') }}" enctype="multipart/form-data">
+                    <form class="grid grid-cols-1 gap-6 mt-8 md:grid-cols-2" method="POST" action="{{ route('login') }}"
+                        enctype="multipart/form-data">
                         @csrf
 
                         <div>
