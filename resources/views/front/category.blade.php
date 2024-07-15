@@ -1,5 +1,5 @@
 @extends('front.layouts.app')
-@section('title', 'Sari Pasundan | Category')
+@section('title', 'Sari Pasundan Pekanbaru - Kategori')
 @section('content')
 
     <x-navbar />
@@ -103,9 +103,7 @@
                         </div>
                     </a>
                 @empty
-                    <p>
-                        Produk tidak tersedia
-                    </p>
+                    <p class="text-center text-yellow-400 text-xl">Produk tidak tersedia</p>
                 @endforelse
             </div>
         </div>

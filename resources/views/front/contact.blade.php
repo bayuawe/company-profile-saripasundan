@@ -1,5 +1,5 @@
 @extends('front.layouts.app')
-@section('title', 'Sari Pasudan | Contact')
+@section('title', 'Sari Pasundan Pekanbaru - Kontak')
 @section('content')
 
     <x-navbar />

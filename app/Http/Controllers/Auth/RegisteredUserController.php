@@ -27,43 +27,42 @@ class RegisteredUserController extends Controller
     /**
      * Menampilkan formulir registrasi.
      */
-    public function create(): View
-    {
-        return view('auth.register');
-    }
+    // public function create(): View
+    // {
+    //      return view('auth.register');
+    // }
 
     /**
      * Menangani permintaan registrasi yang masuk.
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function store(Request $request): RedirectResponse
-    {
-        $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'avatar' => ['required', 'image', 'mimes:png,jpg,jpeg', 'max:2048'],
-            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . User::class],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
-        ]);
+    // public function store(Request $request): RedirectResponse
+    // {
+    // $request->validate([
+    //     'name' => ['required', 'string', 'max:255'],
+    //     'avatar' => ['required', 'image', 'mimes:png,jpg,jpeg', 'max:2048'],
+    //     'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . User::class],
+    //     'password' => ['required', 'confirmed', Rules\Password::defaults()],
+    // ]);
 
-        // Mengunggah avatar pengguna ke Cloudinary
-        $avatar = Cloudinary::upload($request->file('avatar')->getRealPath())->getSecurePath();
+    // // Mengunggah avatar pengguna ke Cloudinary
+    // $avatar = Cloudinary::upload($request->file('avatar')->getRealPath())->getSecurePath();
 
-        // Membuat pengguna baru
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'avatar' => $avatar, // Menyimpan URL gambar dari Cloudinary
-            'password' => Hash::make($request->password),
-        ]);
+    // Membuat pengguna baru
+    // $user = User::create([
+    //     'name' => $request->name,
+    //     'email' => $request->email,
+    //     'avatar' => $avatar, // Menyimpan URL gambar dari Cloudinary
+    //     'password' => Hash::make($request->password),
+    // ]);
 
-        // Mengirimkan event Registered
-        event(new Registered($user));
+    // Mengirimkan event Registered
+    // event(new Registered($user));
 
-        // Login pengguna yang baru terdaftar
-        Auth::login($user);
+    // // Login pengguna yang baru terdaftar
+    // Auth::login($user);
 
-        // Redirect ke halaman beranda
-        return redirect(RouteServiceProvider::HOME);
-    }
+    //     // return redirect(RouteServiceProvider::HOME);
+    // }
 }

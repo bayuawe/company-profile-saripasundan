@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileUpdateRequest;
+use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Validation\ValidationException;
 use Illuminate\View\View;
 
 class ProfileController extends Controller
@@ -26,6 +29,12 @@ class ProfileController extends Controller
      */
     public function update(ProfileUpdateRequest $request): RedirectResponse
     {
+        $validated = $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'avatar' => ['sometimes', 'image', 'mimes:png,jpg,jpeg', 'max:2048'],
+            'email' => ['required', 'string', 'max:65535'],
+        ]);
+
         $request->user()->fill($request->validated());
 
         if ($request->user()->isDirty('email')) {
@@ -35,6 +44,26 @@ class ProfileController extends Controller
         $request->user()->save();
 
         return Redirect::route('profile.edit')->with('status', 'profile-updated');
+
+        DB::beginTransaction();
+
+        try {
+            if ($request->hasFile('avatar')) {
+                // Mengunggah gambar baru ke Cloudinary
+                $uploadedFileUrl = Cloudinary::upload($request->file('avatar')->getRealPath())->getSecurePath();
+                $validated['avatar'] = $uploadedFileUrl;
+            }
+
+            return redirect()->route('profile.edit')->with('success', 'Profile updated successfully!');
+        } catch (\Exception $e) {
+            DB::rollBack();
+
+            $error = ValidationException::withMessages([
+                'system_error' => ['System error!' . $e->getMessage()],
+            ]);
+
+            throw $error;
+        }
     }
 
     /**

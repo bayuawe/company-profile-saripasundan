@@ -1,5 +1,5 @@
 @extends('front.layouts.app')
-@section('title', 'Sari Pasudan | Career Details')
+@section('title', 'Sari Pasundan Pekanbaru - Detail Lowongan Pekerjaan')
 @section('content')
 
     <x-navbar />
@@ -13,8 +13,7 @@
                 <div class="flex justify-between items-center mb-6">
                     <div class="flex w-full sm:items-center gap-x-5 sm:gap-x-3">
                         <div class="flex-shrink-0">
-                            <img class="size-12 rounded-full" src="{{ $career->creator->avatar) }}"
-                                alt="Image Description">
+                            <img class="size-12 rounded-full" src="{{ $career->creator->avatar }}" alt="Image Description">
                         </div>
 
                         <div class="grow">
@@ -76,8 +75,7 @@
                 </div>
 
                 <figure>
-                    <img class="h-96 w-full object-cover rounded-xl" src="{{ $career->cover }}"
-                        alt="{{ $career->title }}">
+                    <img class="h-96 w-full object-cover rounded-xl" src="{{ $career->cover }}" alt="{{ $career->title }}">
                 </figure>
 
                 <h2 class="text-xl items-center text-yellow-400 font-bold">Description</h2>
