@@ -18,8 +18,10 @@
 </head>
 
 <body class="font-sans text-gray-900 antialiased">
-    <div class="flex  border  justify-center items-center pt-6 sm:pt-0 bg-gray-100 h-screen w-screen">
-        {{ $slot }}
+    <div class="flex justify-center items-center pt-6 sm:pt-0 bg-gray-100 min-h-screen w-screen">
+        <div class="container mx-auto px-4">
+            {{ $slot }}
+        </div>
     </div>
 </body>
 

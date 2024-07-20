@@ -2,6 +2,12 @@
     <div class="py-12">
 
         <div class="overflow-hidden p-10 shadow-sm sm:rounded-lg flex flex-col gap-y-5">
+            <div class="flex flex-col gap-y-5">
+                <h1 class="text-2xl font-bold">Dashboard</h1>
+                <h2 class="text-xl font-semibold">
+                    <span id="greeting"></span>, {{ Auth::user()->name }}!
+                </h2>
+            </div>
 
             @if ($errors->any())
                 <div class="alert alert-danger">
@@ -17,148 +23,72 @@
 
             <!-- Grid -->
             <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-                <!-- Card -->
-                <div class="flex flex-col bg-white border shadow-sm rounded-xl">
-                    <div class="p-4 md:p-5">
-                        <div class="flex items-center gap-x-2">
-                            <p class="text-xs uppercase tracking-wide text-gray-500">
-                                Total users
-                            </p>
-                            <div class="hs-tooltip">
-                                <div class="hs-tooltip-toggle">
-                                    <svg class="flex-shrink-0 size-4 text-gray-500" xmlns="http://www.w3.org/2000/svg"
-                                        width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <circle cx="12" cy="12" r="10" />
-                                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
-                                        <path d="M12 17h.01" />
-                                    </svg>
-                                    <span
-                                        class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-gray-900 text-xs font-medium text-white rounded shadow-sm"
-                                        role="tooltip">
-                                        The number of daily users
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="mt-1 flex items-center gap-x-2">
-                            <h3 class="text-xl sm:text-2xl font-medium text-gray-800">
-                                123123
-                            </h3>
-                            <span class="flex items-center gap-x-1 text-green-600">
-                                <svg class="inline-block size-4 self-center" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
-                                    <polyline points="16 7 22 7 22 13" />
-                                </svg>
-                                <span class="inline-block text-sm">
-                                    1.7%
-                                </span>
-                            </span>
-                        </div>
+                <div class="flex flex-col bg-white shadow-sm rounded-xl">
+                    <div
+                        class="group w-full rounded-lg bg-yellow-400 p-5 transition relative duration-300 cursor-pointer hover:translate-y-[3px] hover:shadow-[0_-8px_0px_0px_#EAB308]">
+                        <p class="text-white text-2xl font-bold">{{ $users->count() }}</p>
+                        <p class="text-white text-sm font-bold">Users</p>
+                        <img src="{{ asset('images/icons/users-48.png') }}" alt="User Icon" height="36"
+                            width="36"
+                            class="group-hover:opacity-100 absolute right-[10%] top-[50%] translate-y-[-50%] opacity-20 transition group-hover:scale-110 duration-300">
                     </div>
                 </div>
-                <!-- End Card -->
-
-                <!-- Card -->
-                <div class="flex flex-col bg-white border shadow-sm rounded-xl">
-                    <div class="p-4 md:p-5">
-                        <div class="flex items-center ">
-                            <p class="text-xs uppercase tracking-wide text-gray-500">
-                                Products
-                            </p>
-
-                        </div>
-
-                        <div class="mt-1 flex items-center gap-x-2 justify-between">
-                            <h3 class="text-xl sm:text-2xl font-medium text-gray-800">
-                                {{ count($my_products) }}
-                            </h3>
-                            <a href="{{ route('admin.products.index') }}"
-                                class="text-xs text-blue-500 hover:text-blue-600 transition-colors">
-                                view all
-                            </a>
-                        </div>
+                <div class="flex flex-col bg-white shadow-sm rounded-xl">
+                    <div
+                        class="group w-full rounded-lg bg-yellow-400 p-5 transition relative duration-300 cursor-pointer hover:translate-y-[3px] hover:shadow-[0_-8px_0px_0px_#EAB308]">
+                        <p class="text-white text-2xl font-bold">{{ $my_categories->count() }}</p>
+                        <p class="text-white text-sm font-bold">Product Categories</p>
+                        <img src="{{ asset('images/icons/category-48.png') }}" alt="User Icon" height="36"
+                            width="36"
+                            class="group-hover:opacity-100 absolute right-[10%] top-[50%] translate-y-[-50%] opacity-20 transition group-hover:scale-110 duration-300">
                     </div>
                 </div>
-                <!-- End Card -->
-
-                <!-- Card -->
-                <div class="flex flex-col bg-white border shadow-sm rounded-xl">
-                    <div class="p-4 md:p-5">
-                        <div class="flex items-center ">
-                            <p class="text-xs uppercase tracking-wide text-gray-500">
-                                Categories
-                            </p>
-
-                        </div>
-
-                        <div class="mt-1 flex items-center gap-x-2 justify-between">
-                            <h3 class="text-xl sm:text-2xl font-medium text-gray-800">
-                                1231
-                            </h3>
-                            <a href="#"
-                                class="text-xs text-blue-500 hover:text-blue-600 transition-colors">
-                                view all
-                            </a>
-                        </div>
+                <div class="flex flex-col bg-white shadow-sm rounded-xl">
+                    <div
+                        class="group w-full rounded-lg bg-yellow-400 p-5 transition relative duration-300 cursor-pointer hover:translate-y-[3px] hover:shadow-[0_-8px_0px_0px_#EAB308]">
+                        <p class="text-white text-2xl font-bold">{{ $my_products->count() }}</p>
+                        <p class="text-white text-sm font-bold">Products</p>
+                        <img src="{{ asset('images/icons/cake-48.png') }}" alt="User Icon" height="36" width="36"
+                            class="group-hover:opacity-100 absolute right-[10%] top-[50%] translate-y-[-50%] opacity-20 transition group-hover:scale-110 duration-300">
                     </div>
                 </div>
-                <!-- End Card -->
-
-                <!-- Card -->
-                <div class="flex flex-col bg-white border shadow-sm rounded-xl">
-                    <div class="p-4 md:p-5">
-                        <div class="flex items-center gap-x-2">
-                            <p class="text-xs uppercase tracking-wide text-gray-500">
-                                Avg. Click Rate
-                            </p>
-                        </div>
-
-                        <div class="mt-1 flex items-center gap-x-2">
-                            <h3 class="text-xl sm:text-2xl font-medium text-gray-800">
-                                56.8%
-                            </h3>
-                            <span class="flex items-center gap-x-1 text-red-600">
-                                <svg class="inline-block size-4 self-center" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <polyline points="22 17 13.5 8.5 8.5 13.5 2 7" />
-                                    <polyline points="16 17 22 17 22 11" />
-                                </svg>
-                                <span class="inline-block text-sm">
-                                    1.7%
-                                </span>
-                            </span>
-                        </div>
+                <div class="flex flex-col bg-white shadow-sm rounded-xl">
+                    <div
+                        class="group w-full rounded-lg bg-yellow-400 p-5 transition relative duration-300 cursor-pointer hover:translate-y-[3px] hover:shadow-[0_-8px_0px_0px_#EAB308]">
+                        <p class="text-white text-2xl font-bold">{{ $my_careers->count() }}</p>
+                        <p class="text-white text-sm font-bold">Careers</p>
+                        <img src="{{ asset('images/icons/chef-hat-48.png') }}" alt="User Icon" height="36"
+                            width="36"
+                            class="group-hover:opacity-100 absolute right-[10%] top-[50%] translate-y-[-50%] opacity-20 transition group-hover:scale-110 duration-300">
                     </div>
                 </div>
-                <!-- End Card -->
 
-                <!-- Card -->
-                <div class="flex flex-col bg-white border shadow-sm rounded-xl">
-                    <div class="p-4 md:p-5">
-                        <div class="flex items-center gap-x-2">
-                            <p class="text-xs uppercase tracking-wide text-gray-500">
-                                Pageviews
-                            </p>
-                        </div>
-
-                        <div class="mt-1 flex items-center gap-x-2">
-                            <h3 class="text-xl sm:text-2xl font-medium text-gray-800">
-                                92,913
-                            </h3>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Card -->
             </div>
             <!-- End Grid -->
         </div>
     </div>
 </x-app-layout>
+
+<script>
+    function updateGreeting() {
+        const now = new Date();
+        const hour = now.getHours();
+        let greeting;
+
+        if (hour >= 5 && hour < 12) {
+            greeting = 'Good Morning';
+        } else if (hour >= 12 && hour < 18) {
+            greeting = 'Good Afternoon';
+        } else if (hour >= 18 && hour < 21) {
+            greeting = 'Good Evening';
+        } else {
+            greeting = 'Good Night';
+        }
+
+        document.getElementById('greeting').innerText = greeting;
+    }
+
+    // Update greeting immediately and then every minute
+    updateGreeting();
+    setInterval(updateGreeting, 60000);
+</script>

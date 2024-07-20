@@ -22,6 +22,7 @@ class DashboardController extends Controller
         $users = User::all();
 
         return view('admin.dashboard', [
+            'users' => $users,
             'my_products' => $my_products,
             'my_careers' => $my_careers,
             'my_categories' => $my_categories,

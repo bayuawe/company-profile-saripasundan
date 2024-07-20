@@ -42,7 +42,7 @@ class ProductController extends Controller
     {
         $validated = $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'cover' => ['required', 'image', 'mimes:png,jpg,jpeg', 'max:2048'],
+            'cover' => ['required', 'image', 'mimes:png,jpg,jpeg', 'max:5120'],
             'about' => ['required', 'string', 'max:65535'],
             'category_id' => ['required', 'integer'],
             'price' => ['required', 'integer', 'min:0'],
@@ -102,7 +102,7 @@ class ProductController extends Controller
     {
         $validated = $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'cover' => ['sometimes', 'image', 'mimes:png,jpg,jpeg', 'max:2048'],
+            'cover' => ['sometimes', 'image', 'mimes:png,jpg,jpeg', 'max:5120'],
             'about' => ['required', 'string', 'max:65535'],
             'category_id' => ['required', 'integer'],
             'price' => ['required', 'integer', 'min:0'],
