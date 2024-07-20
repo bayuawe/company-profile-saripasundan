@@ -16,12 +16,22 @@ class ProductController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $products = Product::where('creator_id', Auth::id())->paginate(10);
-        return view('admin.products.index', [
-            'products' => $products
-        ]);
+        $search = $request->input('search');
+
+        $products = Product::query()
+            ->where('creator_id', Auth::id())
+            ->when($search, function ($query, $search) {
+                return $query->where('name', 'like', "%{$search}%")
+                    ->orWhere('about', 'like', "%{$search}%")
+                    ->orWhereHas('category', function ($query) use ($search) {
+                        $query->where('name', 'like', "%{$search}%");
+                    });
+            })
+            ->paginate(10);
+
+        return view('admin.products.index', compact('products', 'search'));
     }
 
     /**
