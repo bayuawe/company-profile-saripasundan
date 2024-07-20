@@ -31,7 +31,17 @@
                                     </p>
                                 </div>
 
-                                <div>
+                                <div class="flex items-center gap-x-2">
+                                    <form method="GET" action="{{ route('admin.careers.index') }}"
+                                        class="flex items-center">
+                                        <input type="text" name="search" placeholder="Search Job Vacancy"
+                                            value="{{ request('search') }}"
+                                            class="py-2 px-3 border border-gray-300 rounded-lg text-sm focus:border-yellow-400 focus:ring-yellow-400">
+                                        <button type="submit"
+                                            class="py-2 px-3 ml-2 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-yellow-400 text-white hover:bg-yellow-400 hover:text-gray-800 disabled:opacity-50 disabled:pointer-events-none">
+                                            Search
+                                        </button>
+                                    </form>
                                     <div class="inline-flex gap-x-2">
                                         <a class="py-2 px-3 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-yellow-400 text-white hover:bg-yellow-400 hover:text-gray-800 disabled:opacity-50 disabled:pointer-events-none"
                                             href="{{ route('admin.careers.create') }}">

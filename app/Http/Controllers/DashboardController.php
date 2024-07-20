@@ -21,11 +21,16 @@ class DashboardController extends Controller
         $my_categories = Category::where('id', Auth::id())->get();
         $users = User::all();
 
+        $categories = Category::withCount('products')
+            ->orderBy('products_count', 'desc')
+            ->get();
+
         return view('admin.dashboard', [
             'users' => $users,
             'my_products' => $my_products,
             'my_careers' => $my_careers,
             'my_categories' => $my_categories,
+            'categories' => $categories
         ]);
     }
 }

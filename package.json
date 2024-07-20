@@ -21,6 +21,7 @@
         "@preline/collapse": "^2.1.0",
         "@preline/dropdown": "^2.1.0",
         "@preline/scrollspy": "^2.1.0",
+        "chart.js": "^4.4.3",
         "preline": "^2.1.0",
         "trix": "^2.1.1"
     }

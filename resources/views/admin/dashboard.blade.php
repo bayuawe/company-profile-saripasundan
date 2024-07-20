@@ -1,7 +1,7 @@
 <x-app-layout>
-    <div class="py-12">
-
+    <div class="py-5">
         <div class="overflow-hidden p-10 shadow-sm sm:rounded-lg flex flex-col gap-y-5">
+
             <div class="flex flex-col gap-y-5">
                 <h1 class="text-2xl font-bold">Dashboard</h1>
                 <h2 class="text-xl font-semibold">
@@ -65,6 +65,13 @@
 
             </div>
             <!-- End Grid -->
+
+            <div class="bg-white p-5 rounded-lg shadow-lg w-full overflow-x-auto">
+                <h2 class="text-xl font-bold mb-4">Category Chart</h2>
+                <div class="w-full">
+                    <canvas id="categoryChart"></canvas>
+                </div>
+            </div>
         </div>
     </div>
 </x-app-layout>
@@ -91,4 +98,31 @@
     // Update greeting immediately and then every minute
     updateGreeting();
     setInterval(updateGreeting, 60000);
+
+    // Prepare data for Chart.js
+    const categoryLabels = @json($categories->pluck('name'));
+    const productCounts = @json($categories->pluck('products_count'));
+
+    // Chart.js example
+    const ctx = document.getElementById('categoryChart').getContext('2d');
+    const categoryChart = new Chart(ctx, {
+        type: 'bar', // Change this to 'line', 'pie', 'doughnut', etc. for different chart types
+        data: {
+            labels: categoryLabels,
+            datasets: [{
+                label: 'Number of Products',
+                data: productCounts,
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
 </script>

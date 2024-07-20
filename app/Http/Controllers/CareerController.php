@@ -15,11 +15,19 @@ class CareerController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $careers = Career::where('creator_id', auth()->id())->paginate(10);
+        $search = $request->input('search');
+
+        $careers = Career::where('creator_id', auth()->id())
+            ->when($search, function ($query, $search) {
+                return $query->where('title', 'like', "%{$search}%");
+            })
+            ->paginate(10);
+
         return view('admin.careers.index', [
-            'careers' => $careers
+            'careers' => $careers,
+            'search' => $search
         ]);
     }
 

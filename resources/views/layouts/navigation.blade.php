@@ -21,6 +21,8 @@
                 </button>
             </div>
 
+            <!-- Hapus form pencarian -->
+            <!--
             <div class="hidden sm:block">
                 <label for="icon" class="sr-only">Search</label>
                 <div class="relative min-w-72 md:min-w-80">
@@ -37,15 +39,14 @@
                         placeholder="Search">
                 </div>
             </div>
+            -->
 
-            <div class="flex flex-row items-center justify-end gap-2">
-
+            <div class="flex flex-row items-center justify-end gap-2 ms-auto">
                 <div class="hs-dropdown [--placement:bottom-right] relative inline-flex">
                     <button id="hs-dropdown-with-header" type="button"
                         class="w-[2.375rem] h-[2.375rem] inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none">
                         <img class="inline-block size-[38px] rounded-full ring-2 ring-white"
-                            src="{{ Auth::user()->avatar }}"
-                            alt="Image Description">
+                            src="{{ Auth::user()->avatar }}" alt="Image Description">
                     </button>
 
                     <div class="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden min-w-60 bg-white shadow-md rounded-lg p-2"
@@ -84,7 +85,6 @@
         </div>
     </nav>
 </header>
-
 <div class="sticky top-0 inset-x-0 z-20 bg-white border-y px-4 sm:px-6 md:px-8 lg:hidden">
     <div class="flex justify-between items-center py-2">
 
