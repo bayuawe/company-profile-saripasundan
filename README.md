@@ -1,66 +1,75 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
 
-## About Laravel
+# 🏢 Company Profile – Sari Pasundan
+**Company Profile – Sari Pasundan** adalah aplikasi web yang dikembangkan menggunakan Laravel untuk menampilkan profil perusahaan secara profesional. Proyek ini dirancang untuk memperkenalkan produk dan layanan CV. Sari Pasundan Berkah kepada calon pelanggan melalui platform digital yang responsif dan mudah digunakan
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🚀 Fitur Utama
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+ Menampilkan informasi perusahaan secara lengkap dan terstruktu.
+ Galeri produk dengan kategori yang mudah dinavigas.
+ Desain responsif yang optimal untuk berbagai perangka.
+ Formulir kontak untuk memudahkan komunikasi dengan pelangga.
+ Pengelolaan konten yang efisien melalui struktur proyek Larave.
 
-## Learning Laravel
+## 🛠️ Teknologi yang Digunakan
+- [Laravel](https://laravel.co/)- [PHP](https://www.php.ne/)- [Blade Templating Engine](https://laravel.com/docs/9.x/blae)- [Tailwind CSS](https://tailwindcss.co/)- [MySQL](https://www.mysql.co/)- [Vite](https://vitejs.de/)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## ⚙️ Instalasi & Setup
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+**Clone repositori ini**
+   ```bash
+   git clone https://github.com/bayuawe/company-profile-saripasundan.git
+   cd company-profile-saripasundan
+   ```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+**Instal dependensi PHP dan JavaScript**
+   ```bash
+   composer install
+   npm install
+   ```
 
-## Laravel Sponsors
+**Salin file `.env` dan atur konfigurasi**
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+**Atur koneksi database di file `.env` dan jalankan migrasi**
+   ```bash
+   php artisan migrate
+   ```
 
-### Premium Partners
+**Jalankan server pengembangan**
+   ```bash
+   php artisan serve
+   npm run dev
+   ```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+## 📁 Struktur Proyk
+```bash
+company-profile-saripasundan/
+├── app/                 # Logika aplikasi
+├── bootstrap/           # Bootstrap Laravel
+├── config/              # Konfigurasi aplikasi
+├── database/            # Migrasi dan seeder
+├── public/              # Aset publik
+├── resources/           # View dan aset frontend
+├── routes/              # Definisi rute
+├── storage/             # File yang dihasilkan
+├── tests/               # Pengujian
+├── .env.example         # Contoh file environment
+├── composer.json        # Dependensi PHP
+├── package.json         # Dependensi JavaScript
+└── vite.config.js       # Konfigurasi Vite
+```
 
-## Contributing
+## ✨ Kontribui
+Kontribusi sangat terbuka! Jika Anda memiliki ide, perbaikan bug, atau peningkatan fitur, silakan fork repositori ini dan buat pull requst.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## 📄 Lisesi
+Proyek ini dilisensikan di bawah [MIT License](LICESE).
 
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## 📬 Kotak
+Dibuat oleh [Bayu Aryandi Wijaya](bayuawe.my.id). Jika Anda memiliki pertanyaan atau masukan, silakan hubungi melalui [bayuaryandi21@gmail.com](mailto:bayuaryandi21@gmailcom).
